@@ -1,0 +1,685 @@
+/* Foldwise */
+
+/* Scope editor: folder chips above the box that adds one. */
+.foldwise-scope {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--size-4-1);
+}
+
+.foldwise-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--size-4-1);
+  max-width: 100%;
+}
+
+.foldwise-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2-1);
+  padding: var(--size-2-1) var(--size-4-2);
+  border-radius: var(--radius-m);
+  background: var(--background-modifier-hover);
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-chip-remove {
+  padding: 0;
+  height: auto;
+}
+
+/* Test section result. */
+.foldwise-test-headline {
+  color: var(--text-normal);
+  font-weight: var(--font-semibold);
+}
+
+/* Asset manager page */
+.foldwise-assets {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.foldwise-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--size-4-1);
+  padding: var(--size-4-2) var(--size-4-4) 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  overflow-x: auto;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.foldwise-tab {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+}
+
+.foldwise-tab-label {
+  background: transparent;
+  box-shadow: none;
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+  color: inherit;
+}
+
+.foldwise-tab.is-active {
+  color: var(--text-normal);
+  border-bottom-color: var(--interactive-accent);
+}
+
+.foldwise-tab-remove {
+  margin-left: calc(-1 * var(--size-4-1));
+  opacity: 0.5;
+}
+
+.foldwise-tab-remove:hover {
+  opacity: 1;
+}
+
+.foldwise-tab-add {
+  flex: 0 0 auto;
+  margin-bottom: var(--size-2-2);
+}
+
+.foldwise-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--size-4-2) var(--size-4-3);
+  padding: var(--size-4-3) var(--size-4-4);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.foldwise-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2-1);
+  min-width: 0;
+}
+
+.foldwise-field > label {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+}
+
+.foldwise-field.is-hidden {
+  display: none;
+}
+
+.foldwise-field select {
+  max-width: 15em;
+}
+
+.foldwise-field .search-input-container {
+  width: 12em;
+}
+
+.foldwise-field-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2-1);
+}
+
+.foldwise-field .clickable-icon.is-active {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.foldwise-count {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  white-space: nowrap;
+}
+
+.foldwise-scroller {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--size-4-4);
+  position: relative;
+}
+
+.foldwise-sizer {
+  position: relative;
+  height: var(--fw-total, 0);
+}
+
+.foldwise-window {
+  position: absolute;
+  inset: 0 0 auto 0;
+  transform: translateY(var(--fw-offset, 0));
+  display: grid;
+  grid-template-columns: repeat(var(--fw-columns, 1), minmax(0, 1fr));
+  gap: var(--fw-gap, 12px);
+}
+
+.foldwise-empty {
+  display: none;
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--size-4-12) var(--size-4-4);
+}
+
+.foldwise-empty.is-visible {
+  display: block;
+}
+
+/* A card: breadcrumb strip on top, then details, photo frame and actions side by side. */
+.foldwise-card {
+  container-type: inline-size;
+  box-sizing: border-box;
+  height: var(--fw-card-height);
+  display: flex;
+  flex-direction: column;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.foldwise-card-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--size-2-1);
+  height: 30px;
+  min-height: 30px;
+  padding: 0 var(--size-4-3);
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.foldwise-card-strip-icon {
+  display: inline-flex;
+}
+
+.foldwise-card-strip-icon .svg-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.foldwise-crumb {
+  background: transparent;
+  box-shadow: none;
+  height: auto;
+  padding: 0 var(--size-2-1);
+  color: var(--text-muted);
+  font-size: inherit;
+}
+
+.foldwise-crumb:hover {
+  color: var(--text-accent);
+}
+
+.foldwise-card-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-3);
+  padding: 0 var(--size-4-3) var(--size-4-3);
+}
+
+.foldwise-card-info {
+  flex: 1 1 120px;
+  min-width: 0;
+}
+
+.foldwise-card-name {
+  font-weight: var(--font-semibold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.foldwise-card-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px var(--size-4-2);
+  margin: var(--size-4-2) 0 0;
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-card-details dt {
+  color: var(--text-faint);
+}
+
+.foldwise-card-details dd {
+  margin: 0;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The standard frame: images fit inside, are never stretched or cropped and are never enlarged. */
+.foldwise-frame {
+  flex: 0 1 var(--fw-frame-width);
+  width: var(--fw-frame-width);
+  min-width: 0;
+  height: var(--fw-frame-height);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--background-primary-alt);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  box-shadow: none;
+  cursor: zoom-in;
+}
+
+.foldwise-frame img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.foldwise-frame.is-loading {
+  animation: foldwise-pulse 1.2s ease-in-out infinite;
+}
+
+.foldwise-frame.is-pdf,
+.foldwise-frame.is-broken {
+  color: var(--text-faint);
+}
+
+.foldwise-frame.is-pdf .svg-icon {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes foldwise-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.foldwise-card-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-4-3);
+  align-self: stretch;
+  padding: var(--size-4-1) 0 0 var(--size-4-3);
+  border-left: 1px solid var(--background-modifier-border);
+}
+
+.foldwise-card-actions button {
+  min-width: 84px;
+}
+
+.foldwise-card-more {
+  display: none;
+}
+
+/* Narrow card: the three actions collapse into one menu button. */
+@container (max-width: 540px) {
+  .foldwise-card-actions {
+    display: none;
+  }
+
+  .foldwise-card-more {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  /* Give the file name room: the frame takes at most 42% of the card. */
+  .foldwise-card.is-grid .foldwise-frame {
+    flex-basis: min(var(--fw-frame-width), 42cqw);
+    width: min(var(--fw-frame-width), 42cqw);
+  }
+
+  /* Compact rows keep only the size and the dimensions. */
+  .foldwise-card.is-list .foldwise-card-details dd:nth-of-type(2),
+  .foldwise-card.is-list .foldwise-card-details dd:nth-of-type(4),
+  .foldwise-card.is-list .foldwise-card-details dd:nth-of-type(5) {
+    display: none;
+  }
+}
+
+/* List view: one compact row per file: frame, then details, then actions. */
+.foldwise-card.is-list .foldwise-card-body {
+  padding: 0 var(--size-4-3);
+}
+
+.foldwise-card.is-list .foldwise-frame {
+  order: -1;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 64px;
+}
+
+.foldwise-card.is-list .foldwise-card-info {
+  flex: 1 1 0;
+  overflow: hidden;
+}
+
+.foldwise-card.is-list .foldwise-card-actions button {
+  min-width: 0;
+  padding: 0 var(--size-4-3);
+}
+
+.foldwise-card.is-list .foldwise-card-details {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--size-4-3);
+  margin-top: 2px;
+}
+
+.foldwise-card.is-list .foldwise-card-details dt {
+  display: none;
+}
+
+.foldwise-card.is-list .foldwise-card-details dd {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.foldwise-card.is-list .foldwise-card-strip {
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+}
+
+.foldwise-card.is-list .foldwise-card-actions {
+  order: 1;
+  flex-direction: row;
+  align-self: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--size-4-3);
+}
+
+.foldwise-card.is-list .foldwise-card-more {
+  order: 1;
+}
+
+/* Full-size preview of one original. */
+.foldwise-preview {
+  width: auto;
+  max-width: 92vw;
+}
+
+.foldwise-preview-image {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+}
+
+.foldwise-preview-path {
+  margin-top: var(--size-4-2);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+/* Selecting cards for a bulk move or rename */
+.foldwise-card {
+  position: relative;
+}
+
+.foldwise-card.is-selected {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px var(--interactive-accent);
+}
+
+.foldwise-card-select {
+  margin: 0;
+}
+
+.foldwise-card.is-grid .foldwise-card-select {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+.foldwise-card.is-grid .foldwise-card-strip {
+  padding-left: 36px;
+}
+
+.foldwise-card.is-list .foldwise-card-select {
+  order: -2;
+  flex: 0 0 auto;
+}
+
+.foldwise-selection {
+  display: none;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--size-4-2);
+  padding: var(--size-4-2) var(--size-4-4);
+  background: var(--background-modifier-hover);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.foldwise-selection.is-visible {
+  display: flex;
+}
+
+.foldwise-selection-text {
+  font-weight: var(--font-semibold);
+  margin-right: var(--size-4-2);
+}
+
+/* Inline rename: the name becomes a text box with Save and Cancel; the details give way to the message. */
+.foldwise-card.is-editing .foldwise-card-details {
+  display: none;
+}
+
+.foldwise-rename {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2-3);
+}
+
+.foldwise-rename-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2-2);
+}
+
+.foldwise-rename-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.foldwise-rename-row input.is-invalid {
+  border-color: var(--text-error);
+}
+
+.foldwise-rename-ext {
+  color: var(--text-muted);
+}
+
+.foldwise-rename-buttons {
+  display: flex;
+  gap: var(--size-2-3);
+}
+
+.foldwise-rename-message {
+  color: var(--text-error);
+  font-size: var(--font-ui-smaller);
+  overflow-wrap: anywhere;
+}
+
+/* Move picker and bulk dialogs */
+.foldwise-recent-tag {
+  margin-left: var(--size-4-2);
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+.foldwise-progress {
+  width: 100%;
+}
+
+.foldwise-bulk {
+  width: min(640px, 92vw);
+}
+
+.foldwise-bulk-warning {
+  color: var(--text-warning);
+  font-size: var(--font-ui-small);
+  margin-bottom: var(--size-4-2);
+}
+
+.foldwise-bulk-list {
+  max-height: 40vh;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: var(--size-2-2) var(--size-4-2);
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-bulk-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--size-2-3);
+  padding: 2px 0;
+}
+
+.foldwise-bulk-old {
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.foldwise-bulk-arrow {
+  color: var(--text-faint);
+}
+
+.foldwise-bulk-new {
+  overflow-wrap: anywhere;
+}
+
+.foldwise-bulk-row.is-same {
+  opacity: 0.5;
+}
+
+.foldwise-bulk-row.is-conflict .foldwise-bulk-new,
+.foldwise-bulk-row.is-invalid .foldwise-bulk-new,
+.foldwise-bulk-row.is-duplicate .foldwise-bulk-new {
+  color: var(--text-error);
+  text-decoration: line-through;
+}
+
+.foldwise-bulk-note,
+.foldwise-bulk-more {
+  color: var(--text-error);
+  font-size: var(--font-ui-smaller);
+}
+
+.foldwise-bulk-more {
+  color: var(--text-muted);
+}
+
+.foldwise-bulk-summary {
+  margin: var(--size-4-2) 0;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-rename-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Presets, import and export */
+.foldwise-prompt-message {
+  color: var(--text-error);
+  font-size: var(--font-ui-small);
+  min-height: 1.4em;
+}
+
+.foldwise-preset-summary {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.foldwise-apply-preset,
+.foldwise-import {
+  width: min(640px, 92vw);
+}
+
+.foldwise-apply-help {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-apply-list {
+  max-height: 45vh;
+  overflow-y: auto;
+  margin: var(--size-4-2) 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+}
+
+.foldwise-apply-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--size-4-2);
+  padding: var(--size-4-2) var(--size-4-3);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.foldwise-apply-row:last-child {
+  border-bottom: none;
+}
+
+.foldwise-apply-name {
+  font-weight: var(--font-semibold);
+}
+
+.foldwise-apply-change,
+.foldwise-apply-same {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-export-preview {
+  max-height: 40vh;
+  overflow: auto;
+  padding: var(--size-4-2);
+  background: var(--background-secondary);
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-smaller);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.foldwise-import-box {
+  width: 100%;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+}
+
+.foldwise-import-report {
+  margin: var(--size-4-2) 0;
+  font-size: var(--font-ui-small);
+}
+
+.foldwise-import-error {
+  color: var(--text-error);
+}
+
+.foldwise-import-warning {
+  color: var(--text-warning);
+}
