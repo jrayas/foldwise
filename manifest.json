@@ -1,7 +1,7 @@
 {
   "id": "foldwise",
   "name": "Foldwise",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "1.13.4",
   "description": "Route pasted files into per-folder asset folders and manage saved assets on one page.",
   "author": "Anthirayas",
